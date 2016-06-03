@@ -27,23 +27,36 @@
 		
 		<nav id="menu">   			   
 			<div class="element_menu">
-			
-				<?php 
-					$reponse = $bdd->query('SELECT * FROM serie WHERE nom_serie =\'The Walking Dead\'');	
-					$donnees = $reponse->fetch();
-					$serie=$donnees['nom_serie'];	
-					$nb_saison=$donnees['nb_saison_serie'];
-				?>
 	
 				<h3>Liste séries</h3>
 				<div ng-controller="MyController">
 				<ul>
-					<li><a ng-click="ShowHide()" href="#"><?php echo $serie ?></a></li>
-					<li><a href="#">Série 2</a></li>
-					<li><a href="#">Série 3</a></li>
+					<?php 
+						
+						$reponse = $bdd->query('SELECT * FROM serie');
+						
+						// On affiche chaque entrée une à une
+						while ($donnees = $reponse->fetch()) {
+						?>
+								<li><a ng-click="ShowHide()"> 
+								<?php 
+									echo $donnees['nom_serie'] 
+								?>
+								</a></li>
+							<div class="<?php echo $donnees['nom_serie'] ?>" ng-hide="IsHidden">
+							<label for="nombre-saison" id="label-nombre-saison">
+								Jusqu'à quel saison avez vous avancé dans <?php echo $donnees['nom_serie'] ?></br>
+							</label>
+							<input type="range" id="nombre-saison" name="nombre-saison" step="1" value="0" min="0" max="<?php echo $donnees['nb_saison_serie'] ?>" oninput="document.getElementById('AfficheRange').textContent=value" />
+							<span id="AfficheRange"></span> <!-- oninput = event JavaScript quand une valeur ou texte est changé, ici c'est le mouvement du curseur. On récupre la valeur dans l'input range, puis l'affiche avec span, équivalent d'un div sans saut de ligne -->								
+							</div> 
+						<?php
+						}
+					
+					?>
 				</ul>
-				<nav id="categories">        
-					<div class="element_categories" ng-hide="IsHidden">
+				<nav id="categories">  
+					<div class="<?php echo $donnees['nom_serie'] ?>" ng-hide="IsHidden">
 						<h3>Liste catégories</h3>
 						<ul>
 							<li><a href="#">Personnages</a></li>
@@ -51,18 +64,13 @@
 							<li><a href="#">Evènements</a></li>
 							<li><a href="#">Interviews</a></li>
 				
-							<form action="index.php" method="post">
-								<label for="nombre-saison" id="label-nombre-saison">
-									Jusqu'à quel saison avez vous avancé dans <?php echo $serie ?></br>
-
-								</label>
-								<input type="range" id="nombre-saison" name="nombre-saison" step="1" value="0" min="0" max="<?php echo $nb_saison?>" oninput="document.getElementById('AfficheRange').textContent=value" />
-								<span id="AfficheRange"></span>
-								<?php
-									echo '<br/>';
-									$reponse->closeCursor();
-								?>
-							</form>
+					</div>		
+							
+							<?php
+								echo '<br/>';
+								$reponse->closeCursor();
+							?>
+							
 						</ul>
 					</div>    
 				</nav>	
