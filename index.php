@@ -11,20 +11,7 @@
  
     <body ng-app="MyApp">
 	
-	<?php //include_once("./php/connexion.php"); ?>
-	<?php
-	$host = 'mysql:host=localhost;dbname=unspoiledseries'; /* L'adresse du serveur */
-	$login = 'root'; /* Votre nom d'utilisateur */
-	$password = ''; /* Votre mot de passe */
-	try
-	{
-		$bdd = new PDO($host, $login, $password);
-	}
-	catch (Exception $e)
-	{
-		   die('Erreur : ' . $e->getMessage());
-	}
-?>
+	<?php include_once("./php/connection.php"); ?>
     <?php include_once("./php/entete.php"); ?>
     <!-- Le corps -->
 	
@@ -36,11 +23,11 @@
             Ici, vous pourrez trouver toutes les informations que vous désirez sur vos séries !
             Sans spoilers !
         </p>
-		
+		</br>
 		<nav id="menu">   			   
 			<div class="element_menu">
 				<h3>Liste séries</h3>
-				<form method="post" action="./php/index_timeline.php">
+				<form method="post" action="./index_timeline.php">
 				<?php 
 					$reponse = $bdd->query('SELECT * FROM serie');	
 					while ($donnees = $reponse->fetch())
