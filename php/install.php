@@ -3,7 +3,6 @@
 	$host = 'mysql:host=localhost'; /* L'adresse du serveur */
 	$login = 'root'; /* Votre nom d'utilisateur */
 	$password = ''; /* Votre mot de passe */
-
 	try
 	{
 		if($bdd = new PDO($host, $login, $password)) echo 'BDD OK !';
@@ -39,14 +38,13 @@
     UNIQUE (nom_serie)
     )ENGINE=InnoDB DEFAULT CHARSET=utf8";
 	
-	$bdd->prepare($req)->execute(); 
-
+	/*$bdd->prepare($req)->execute(); 
 	$req = "CREATE TABLE saison(
     id_saison INT NOT NULL AUTO_INCREMENT,
     num_saison INT UNSIGNED NOT NULL,
 	id_serie_saison INT NOT NULL,
     PRIMARY KEY (id_saison)
-	)ENGINE=InnoDB DEFAULT CHARSET=utf8";
+	)ENGINE=InnoDB DEFAULT CHARSET=utf8";*/
     //FOREIGN KEY (id_serie_saison) REFERENCES serie (id_serie)
     //)ENGINE=InnoDB DEFAULT CHARSET=utf8";
 	
@@ -55,8 +53,10 @@
 	$req = "CREATE TABLE information(
     id_information INT NOT NULL AUTO_INCREMENT,
     nom_information VARCHAR(128) NOT NULL,
-	lien_information VARCHAR(512) NOT NULL,
+	texte_information VARCHAR(512) NOT NULL,
 	id_categorie_information INT NOT NULL,
+	id_serie_information INT NOT NULL,
+	saison_information INT NOT NULL,
     PRIMARY KEY (id_information)
 	)ENGINE=InnoDB DEFAULT CHARSET=utf8";
     //FOREIGN KEY (id_categorie_information) REFERENCES categorie (id_categorie)
