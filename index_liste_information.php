@@ -78,7 +78,7 @@
 						while ($donnees = $reponse->fetch())
 						{
 						?>
-								<input type="submit" name="nom_choisi_info" value="<?php echo $donnees['nom_information'] ?>" id="<?php echo $donnees['nom_information'] ?>" /><br />	<!-- nom de l'information -->
+								<input type="submit" name="nom_choisi_info" value="<?php echo $donnees['nom_information'] = utf8_encode($donnees['nom_information']) ?>" id="<?php echo $donnees['nom_information'] ?>" /><br />	<!-- nom de l'information -->
 						<?php		
 						}
 						?>

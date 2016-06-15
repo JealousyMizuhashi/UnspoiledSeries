@@ -63,7 +63,7 @@
 	
 					//affichage des informations en prenant en compte la catégorie + la saison + la série
 					$reponse = $bdd->query('SELECT * FROM information WHERE 
-					nom_information=\'' . $_POST['nom_choisi_info'] . '\' &&
+					nom_information=\'' . utf8_decode($_POST['nom_choisi_info']) . '\' &&
 					id_categorie_information=\'' . $_POST['categorie_choisi_info'] . '\' &&
 					saison_information<=\'' . $saison_choisi . '\' &&
 					id_serie_information=\'' . $id_serie_choisi . '\'');
