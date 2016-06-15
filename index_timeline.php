@@ -19,7 +19,6 @@
 			Ici, vous pourrez trouver toutes les informations que vous désirez sur vos séries !
 			Sans spoilers !
 		</p>
-		<p><?php echo $_POST['serie_choisi']; ?></p>
 	</div>
 	<nav id="menu">   			   
 			<div class="element_menu">
@@ -37,38 +36,30 @@
 					</form>
 					<?php
 					$reponse->closeCursor();
-					?>
-					</nav>
-					<?php			
 					$reponse = $bdd->query('SELECT * FROM serie WHERE nom_serie=\'' . $_POST['serie_choisi'] . '\'');	
 					while ($donnees = $reponse->fetch())
 					{
 					?>
 					<div class="timeline">
-						<form action="./index_information.php" method="post">
+						<form action="./index_liste_information.php" method="post">
 								<label for="nombre-saison" id="label-nombre-saison">
 									Jusqu'à quel saison avez vous avancé dans <?php echo $_POST['serie_choisi'] ?></br>
 								</label>
 								<!-- FORMULAIRE TIMELINE_SAISON + SERIE_CHOISI + CATEGORIE ------------------------------------------------------- -->
-								<form action="./index_information.php" method="POST">
-									<input type="range" step="1"  min="0" max="<?php echo $donnees['nb_saison_serie'] ?>" value="0" id="foo" name="saison_choisi" onchange='document.getElementById("bar").value = "Slider Value = " + document.getElementById("foo").value;'/>
-									<input type="text" name="bar" id="bar" value="Slider Value = 0" disabled /> <!-- timeline par saison -->
-									<br />
-									<li><input type="submit" name="categorie_choisi" value="personnages" id="personnages" /></li>	<!-- catégorie -->
-									<li><input type="submit" name="categorie_choisi" value="lieux" id="lieux" /></li>
-									<li><input type="submit" name="categorie_choisi" value="evenements" id="evenements" /></li>
-									<li><input type="submit" name="categorie_choisi" value="interviews" id="interviews" /></li>
-									<input type="hidden" name="serie_choisi" value="<?php echo $_POST["serie_choisi"] ?>" id="POST_Seriechoisi></input> <!-- serie_choisi -->
-								</form>
+								<input type="range" step="1"  min="0" max="<?php echo $donnees['nb_saison_serie'] ?>" value="0" id="foo" name="saison_choisi" onchange='document.getElementById("bar").value = "Saison : " + document.getElementById("foo").value;'/>
+								<input type="text" name="bar" id="bar" value="Saison : 0" disabled /> <!-- timeline par saison -->
+								<br />
+								<li><input type="submit" name="categorie_choisi" value="personnages" id="personnages" /></li>	<!-- catégorie -->
+								<li><input type="submit" name="categorie_choisi" value="lieux" id="lieux" /></li>
+								<li><input type="submit" name="categorie_choisi" value="evenements" id="evenements" /></li>
+								<li><input type="submit" name="categorie_choisi" value="interviews" id="interviews" /></li>
+								<input type="hidden" name="serie_choisi" value="<?php echo $_POST["serie_choisi"] ?>" id="POST_Seriechoisi"></input> <!-- serie_choisi -->
 								<?php
 								if(isset($_POST["saison_choisi"])){
-									echo "Number of selected saison_choisi are:".$_POST["saison_choisi"];
 								?>
-									<input type="hidden" name="saison_choisi" value="<?php echo $_POST["saison_choisi"] ?>" id="POST_AfficheRange></input>	<!-- saison -->
+									<input type="hidden" name="saison_choisi" value="<?php echo $_POST["saison_choisi"] ?>" id="POST_AfficheRange"></input>	<!-- saison -->
 								<?php
-								} else{
-									echo "Please slide the Slider Bar and Press Submit.";
-								}
+								} else{}
 								?>
 								<!-- ------------------------------------------------------------------------------------------------------------- -->
 						</form>

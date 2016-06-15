@@ -8,16 +8,11 @@
 		<script type="text/javascript" src="http://localhost/UnspoiledSeries/UnspoiledSeries/angular.min.js"></script>
 		<script type="text/javascript" src="http://localhost/UnspoiledSeries/UnspoiledSeries/UnspoiledSeries.js"></script>
     </head>
- 
-    <body ng-app="MyApp">
-	
 	<?php include_once("./php/connection.php"); ?>
     <?php include_once("./php/entete.php"); ?>
-    <!-- Le corps -->
-	
+    <!-- Le corps -->	
     <div id="corps">
         <h1 style="text-align:center">Unspoiled Series</h1>
-      
         <p>
             Bienvenue sur Unspoiled Series ! </br>
             Ici, vous pourrez trouver toutes les informations que vous désirez sur vos séries !
@@ -43,10 +38,7 @@
 						$reponse->closeCursor();
                     ?>  
 		</nav>
-
     </div>
-    
     <?php include_once("./php/footer.php"); ?>
-    
     </body>
 </html>
