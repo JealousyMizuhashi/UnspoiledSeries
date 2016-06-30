@@ -70,11 +70,13 @@
 	)ENGINE=InnoDB DEFAULT CHARSET=utf8";
 	$bdd->prepare($req)->execute(); 
 	
+	/* catégories */
 	$req = "INSERT INTO categorie VALUES(1,'personnages')";	$bdd->prepare($req)->execute();
 	$req = "INSERT INTO categorie VALUES(2,'lieux')";		$bdd->prepare($req)->execute();
 	$req = "INSERT INTO categorie VALUES(3,'evenements')";	$bdd->prepare($req)->execute();
 	$req = "INSERT INTO categorie VALUES(4,'interviews')";	$bdd->prepare($req)->execute();
 	
+	/* séries */
 	$req = "INSERT INTO serie VALUES(1,6,'Game Of Thrones')";			$bdd->prepare($req)->execute();	
 	$req = "INSERT INTO serie VALUES(2,6,'The Walking Dead')";			$bdd->prepare($req)->execute();	
 	$req = "INSERT INTO serie VALUES(3,5,'Breaking Bad')";				$bdd->prepare($req)->execute();
@@ -82,6 +84,7 @@
 	$req = "INSERT INTO serie VALUES(5,10,'Stargate SG-1')";			$bdd->prepare($req)->execute();
 	$req = "INSERT INTO serie VALUES(6,11,'Supernatural')";				$bdd->prepare($req)->execute();
 	$req = "INSERT INTO serie VALUES(7,4,'Orange Is The New Black')";	$bdd->prepare($req)->execute();
+	
 	
 	/* infos personnage */
 	$req = "INSERT INTO information VALUES(1,'Tyrion Lannister', 'Tyrion est un nain. Il est le dernier fils de la famille Lannister.',1,1,0,true)";																			$bdd->prepare($req)->execute();
@@ -127,6 +130,7 @@
 	$req = "INSERT INTO information VALUES(35,'Sam Healy', 'Sam est un ancien gardien de prison. Il sert d&eacute;sormais de conseiller dans la prison de la s&eacute;rie.',1,7,0,true)";									$bdd->prepare($req)->execute();
 	$req = "INSERT INTO information VALUES(36,'Galina\"Red\" Reznikov', 'Galina est une co-d&eacute;tenue de Piper. Elle dirige la cuisine et la communaut&eacute; blanche de la prison.',1,7,0,true)";						$bdd->prepare($req)->execute();
 	$req = "INSERT INTO information VALUES(37,'Suzanne \"Crazy Eyes\" Warren', 'Suzanne prend Piper pour sa m&egrave;re adoptive et la frappe au visage.',1,7,2,true)";														$bdd->prepare($req)->execute();
+	
 	/* infos lieux */
 	$req = "INSERT INTO information VALUES(38,'Winterfell', 'Capitale du nord, elle est dirig&eacute;e par la famille Stark depuis plusieurs milliers d\'ann&eacute;es.',2,1,0,true)";										$bdd->prepare($req)->execute();
 	$req = "INSERT INTO information VALUES(39,'Winterfell', 'Apr&egrave;s la chute de Robb Stark, Winterfell appartient d&eacute;sormais &agrave; la famille Bolton.',2,1,5,true)";											$bdd->prepare($req)->execute();
@@ -138,6 +142,7 @@
 	$req = "INSERT INTO information VALUES(45,'P&eacute;nitentier de Litchfield', 'Prison dans laquelle se d&eacute;roule l\'histoire. Elle est dirig&eacute; par le D&eacute;partement F&eacute;d&eacute;ral de Correction.',2,7,0,true)";	$bdd->prepare($req)->execute();
 	$req = "INSERT INTO information VALUES(46,'Stargate Command (SGC)', 'Base militaire sous une montagne. C\'est l&agrave; qu\'est la porte des &eacute;toiles et que les &eacute;quipes SG partent en exploration 
 	de mondes aliens.',2,5,0,true)"; 																																														$bdd->prepare($req)->execute();
+	
 	/* infos evenements */
 	$req = "INSERT INTO information VALUES(47,'Les noces pourpres','https://www.youtube.com/watch?v=OuD8tjcggjI',3,1,3,true)";																								$bdd->prepare($req)->execute();
 	$req = "INSERT INTO information VALUES(48,'La mort de Joffrey','https://www.youtube.com/watch?v=V5K7motTFf8',3,1,4,true)";																								$bdd->prepare($req)->execute();
@@ -152,6 +157,7 @@
 	$req = "INSERT INTO information VALUES(57,'La r&eacute;surrection de Mal&eacute;fique','https://www.youtube.com/watch?v=EW9vdjYJBcc',3,4,4,true)";																		$bdd->prepare($req)->execute();
 	$req = "INSERT INTO information VALUES(58,'Bataille de la super porte','https://www.youtube.com/watch?v=FRIvaO3i5EM',3,5,9,true)";																						$bdd->prepare($req)->execute();
 	$req = "INSERT INTO information VALUES(59,'D&eacute;collage du Prom&eacute;th&eacute;e','https://www.youtube.com/watch?v=-Xdlr30G6PM',3,5,6,true)";																		$bdd->prepare($req)->execute();
+	
 	/* infos interviews */
 	$req = "INSERT INTO information VALUES(60,'Interview des acteurs et r&eacute;alisateurs avant la saison 2','https://www.youtube.com/watch?v=--jx-ZKmHkE',4,1,2,true)";													$bdd->prepare($req)->execute();
 	$req = "INSERT INTO information VALUES(61,'Interview des acteurs avant le lancement de la saison 6','https://www.youtube.com/watch?v=hX-btYt5caY',4,1,6,true)";															$bdd->prepare($req)->execute();
@@ -159,7 +165,9 @@
 	$req = "INSERT INTO information VALUES(63,'Interview de Laura Prepon et Laverne Cox','https://www.youtube.com/watch?v=ZZupBPrGefw',4,7,3,true)";																		$bdd->prepare($req)->execute();
 	
 	/* comptes */
-	$req = "INSERT INTO user VALUES(1,'admin','admin','admins@admin.fr',2)";																																				$bdd->prepare($req)->execute();
+	$req = "INSERT INTO user VALUES(1,'user','user','user@users.fr',0)";																																				$bdd->prepare($req)->execute();
+	$req = "INSERT INTO user VALUES(2,'modo','modo','modo@modos.fr',1)";																																				$bdd->prepare($req)->execute();
+	$req = "INSERT INTO user VALUES(3,'admin','admin','admin@admins.fr',2)";																																				$bdd->prepare($req)->execute();
 
 	
 	
