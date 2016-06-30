@@ -85,7 +85,6 @@
 	$req = "INSERT INTO serie VALUES(6,11,'Supernatural')";				$bdd->prepare($req)->execute();
 	$req = "INSERT INTO serie VALUES(7,4,'Orange Is The New Black')";	$bdd->prepare($req)->execute();
 	
-	
 	/* infos personnage */
 	$req = "INSERT INTO information VALUES(1,'Tyrion Lannister', 'Tyrion est un nain. Il est le dernier fils de la famille Lannister.',1,1,0,true)";																			$bdd->prepare($req)->execute();
 	$req = "INSERT INTO information VALUES(2,'Tyrion Lannister', 'Il tua son p&egrave;re avec une arbal&egrave;te lors de son &eacute;vasion des prisons du donjon rouge.',1,1,4,true)";										$bdd->prepare($req)->execute();
@@ -142,27 +141,36 @@
 	$req = "INSERT INTO information VALUES(45,'P&eacute;nitentier de Litchfield', 'Prison dans laquelle se d&eacute;roule l\'histoire. Elle est dirig&eacute; par le D&eacute;partement F&eacute;d&eacute;ral de Correction.',2,7,0,true)";	$bdd->prepare($req)->execute();
 	$req = "INSERT INTO information VALUES(46,'Stargate Command (SGC)', 'Base militaire sous une montagne. C\'est l&agrave; qu\'est la porte des &eacute;toiles et que les &eacute;quipes SG partent en exploration 
 	de mondes aliens.',2,5,0,true)"; 																																														$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(47,'Ch&acirc;teaunoir', 'Ch&acirc;teaunoir est le plus grand fort que poss&egrave;de la Garde de Nuit. Il est coll&eacute; au \"Mur\" qui prot&egrave;ge le royaume des hommes 
+	de celui des sauvageons.',2,1,0,true)";																																													$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(48,'La maison familiale des White', 'Cette maison est celle de la famille de Walter White. La famille y passe beaucoup de leur temps libre.',2,2,0,true)";						$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(49,'La maison familiale des White', 'Apr&egrave;s la d&eacute;couverte du trafic de Walter White, et la d&eacute;sertion de la maison par la famille, la maison reste abandonn&eacute;e.
+	 Walter White y retourne pour r&eacute;cup&eacute;rer le puissant poison qu\'il y avait cach&eacute;.',2,3,5,true)";																									$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(50,'Car Wash', 'Station de lavage dans lequel Walter White travaille pour compl&eacute;ter ses revenus en tant que caissier.',2,3,0,true)";										$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(51,'Base d\'Anubis', 'Cette base d\'Anubis poss&egrave;de une arme des anciens utilis&eacute;e pour d&eacute;truire la porte des &eacute;toiles sur la Terre.',2,5,4,true)";		$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(52,'Tartarus', 'Anubis utilisa cette plan&egrave;te pour y construire un laboratoire servant &agrave; la cr&eacute;ation d\'une arm&eacute;e de super soldat.',2,5,8,true)";		$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(53,'Vivesaigues', 'Maison ancestral de la famille Tully. Robb et Catelyn Stark s\'y rende pour rendre hommage &agrave; la mort d\un parent Tully.',2,1,3,true)";					$bdd->prepare($req)->execute();
 	
 	/* infos evenements */
-	$req = "INSERT INTO information VALUES(47,'Les noces pourpres','https://www.youtube.com/watch?v=OuD8tjcggjI',3,1,3,true)";																								$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(48,'La mort de Joffrey','https://www.youtube.com/watch?v=V5K7motTFf8',3,1,4,true)";																								$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(49,'Duel judiciaire Oberyn contre La Montagne','https://www.youtube.com/watch?v=Pr9Do6blB4c',3,1,4,true)";																		$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(50,'La mort de John Snow','https://www.youtube.com/watch?v=HVkHpeW8zJo',3,1,5,true)";																							$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(51,'La mort de Ned Stark','https://www.youtube.com/watch?v=PW6wfXPeJTw',3,1,1,true)";																							$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(52,'La mort de Shane','https://www.youtube.com/watch?v=9L510ov05NI',3,2,2,true)";																								$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(53,'La mort de Gustavo Fring','https://www.youtube.com/watch?v=R6CjCEyAJ2s',3,3,4,true)";																						$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(54,'Say my name (Dit mon nom)','https://www.youtube.com/watch?v=C9MGU7krXnQ',3,3,5,true)";																						$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(55,'La mort de Neal','https://www.youtube.com/watch?v=lMXXCDe7n1U',3,4,3,true)";																									$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(56,'Le mariage de Belle et Rumplestiltskin','https://www.youtube.com/watch?v=UPV90t8afB0',3,4,3,true)";																			$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(57,'La r&eacute;surrection de Mal&eacute;fique','https://www.youtube.com/watch?v=EW9vdjYJBcc',3,4,4,true)";																		$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(58,'Bataille de la super porte','https://www.youtube.com/watch?v=FRIvaO3i5EM',3,5,9,true)";																						$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(59,'D&eacute;collage du Prom&eacute;th&eacute;e','https://www.youtube.com/watch?v=-Xdlr30G6PM',3,5,6,true)";																		$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(54,'Les noces pourpres','https://www.youtube.com/watch?v=OuD8tjcggjI',3,1,3,true)";																								$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(55,'La mort de Joffrey','https://www.youtube.com/watch?v=V5K7motTFf8',3,1,4,true)";																								$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(56,'Duel judiciaire Oberyn contre La Montagne','https://www.youtube.com/watch?v=Pr9Do6blB4c',3,1,4,true)";																		$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(57,'La mort de John Snow','https://www.youtube.com/watch?v=HVkHpeW8zJo',3,1,5,true)";																							$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(58,'La mort de Ned Stark','https://www.youtube.com/watch?v=PW6wfXPeJTw',3,1,1,true)";																							$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(59,'La mort de Shane','https://www.youtube.com/watch?v=9L510ov05NI',3,2,2,true)";																								$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(60,'La mort de Gustavo Fring','https://www.youtube.com/watch?v=R6CjCEyAJ2s',3,3,4,true)";																						$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(61,'Say my name (Dit mon nom)','https://www.youtube.com/watch?v=C9MGU7krXnQ',3,3,5,true)";																						$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(62,'La mort de Neal','https://www.youtube.com/watch?v=lMXXCDe7n1U',3,4,3,true)";																									$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(63,'Le mariage de Belle et Rumplestiltskin','https://www.youtube.com/watch?v=UPV90t8afB0',3,4,3,true)";																			$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(64,'La r&eacute;surrection de Mal&eacute;fique','https://www.youtube.com/watch?v=EW9vdjYJBcc',3,4,4,true)";																		$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(65,'Bataille de la super porte','https://www.youtube.com/watch?v=FRIvaO3i5EM',3,5,9,true)";																						$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(66,'D&eacute;collage du Prom&eacute;th&eacute;e','https://www.youtube.com/watch?v=-Xdlr30G6PM',3,5,6,true)";																		$bdd->prepare($req)->execute();
 	
 	/* infos interviews */
-	$req = "INSERT INTO information VALUES(60,'Interview des acteurs et r&eacute;alisateurs avant la saison 2','https://www.youtube.com/watch?v=--jx-ZKmHkE',4,1,2,true)";													$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(61,'Interview des acteurs avant le lancement de la saison 6','https://www.youtube.com/watch?v=hX-btYt5caY',4,1,6,true)";															$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(62,'Supernatural Comic Con 2015','https://www.youtube.com/watch?v=nvMTCXOWEkU',4,6,10,true)";																					$bdd->prepare($req)->execute();
-	$req = "INSERT INTO information VALUES(63,'Interview de Laura Prepon et Laverne Cox','https://www.youtube.com/watch?v=ZZupBPrGefw',4,7,3,true)";																		$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(67,'Interview des acteurs et r&eacute;alisateurs avant la saison 2','https://www.youtube.com/watch?v=--jx-ZKmHkE',4,1,2,true)";													$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(68,'Interview des acteurs avant le lancement de la saison 6','https://www.youtube.com/watch?v=hX-btYt5caY',4,1,6,true)";															$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(69,'Supernatural Comic Con 2015','https://www.youtube.com/watch?v=nvMTCXOWEkU',4,6,10,true)";																					$bdd->prepare($req)->execute();
+	$req = "INSERT INTO information VALUES(70,'Interview de Laura Prepon et Laverne Cox','https://www.youtube.com/watch?v=ZZupBPrGefw',4,7,3,true)";																		$bdd->prepare($req)->execute();
 	
 	/* comptes */
 	$req = "INSERT INTO user VALUES(1,'user','user','user@users.fr',0)";																																				$bdd->prepare($req)->execute();
