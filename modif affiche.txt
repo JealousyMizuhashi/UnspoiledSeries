@@ -1,0 +1,29 @@
+Modifs affiche
+--------------
+général :
+
+	enlever les ":"
+
+dans la description :
+
+	héberger : és
+	rajouter : pour ajouter ... informations
+	
+persona jon doe :
+
+	sur les sites d'information
+	
+	solution :
+	
+		qu'il n'a pas encore vus
+		
+persona junior jones :		
+	
+	quelques informations basiques
+	le nombre d'informations présent
+	
+présentation :
+
+	remplacer "présentation :" par Aspect visuel + nomApplication
+	
+	
